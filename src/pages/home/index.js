@@ -4,6 +4,7 @@ import { shape } from "prop-types";
 import RefProvider from "Utilities/refProvider";
 import RefErrorBoundary from "Utilities/refErrorBoundary";
 import { formStoreData } from "Utilities/helpers";
+import FlightSearch from "../../pages/flightSearch/index";
 
 const Home = (props) => {
   const propShape = formStoreData(props, ["home"]);
@@ -18,7 +19,7 @@ const Home = (props) => {
     <>
       <RefProvider data={propShape}>
         <RefErrorBoundary {...props}>
-          <div>Hello</div>
+          <FlightSearch />
         </RefErrorBoundary>
       </RefProvider>
     </>

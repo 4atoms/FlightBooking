@@ -10,11 +10,11 @@ import LoginForm from "./loginForm";
 const Login = (props) => {
   const propShape = formStoreData(props, ["login"]);
 
-//   useEffect(() => {
-//     return () => {
-//       propShape.actions.resetHomeStore();
-//     };
-//   }, []);
+  //   useEffect(() => {
+  //     return () => {
+  //       propShape.actions.resetHomeStore();
+  //     };
+  //   }, []);
 
   return (
     <>
