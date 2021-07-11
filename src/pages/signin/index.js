@@ -4,34 +4,35 @@ import { shape } from "prop-types";
 import RefProvider from "Utilities/refProvider";
 import RefErrorBoundary from "Utilities/refErrorBoundary";
 import { formStoreData } from "Utilities/helpers";
+import SigninForm from "./signinForm";
 
-import LoginForm from "./loginForm";
+//import LoginForm from "./loginForm";
 
-const Login = (props) => {
-  const propShape = formStoreData(props, ["login"]);
+const Signin = (props) => {
+  const propShape = formStoreData(props, ["signin"]);
 
-//   useEffect(() => {
-//     return () => {
-//       propShape.actions.resetHomeStore();
-//     };
-//   }, []);
+  //   useEffect(() => {
+  //     return () => {
+  //       propShape.actions.resetHomeStore();
+  //     };
+  //   }, []);
 
   return (
     <>
       <RefProvider data={propShape}>
         <RefErrorBoundary {...props}>
-          <LoginForm />
+          <SigninForm />
         </RefErrorBoundary>
       </RefProvider>
     </>
   );
 };
 
-Login.propTypes = {
+Signin.propTypes = {
   store: shape({}).isRequired,
   actions: shape({}).isRequired,
   location: shape({}).isRequired,
   history: shape({}).isRequired,
 };
 
-export default Login;
+export default Signin;

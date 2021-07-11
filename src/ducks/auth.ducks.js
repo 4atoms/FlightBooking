@@ -5,7 +5,8 @@ const createAction = setNamespace(namespace);
 
 // STORE
 const initialState = {
-  username: "sachin",
+  username: "manish",
+  password: "123",
 };
 
 // ACTIONS
