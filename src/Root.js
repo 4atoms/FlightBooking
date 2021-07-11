@@ -2,6 +2,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import Reduxifier from "Utilities/reduxifier";
 import Application from "Pages/application";
+/*import Modal_final from "./pages/application/fightdetails/Modal_final.js";*/
 
 import "antd/dist/antd.css";
 import "./Root.css";
@@ -9,7 +10,7 @@ import "./Root.css";
 const Root = () => {
   return (
     <Provider store={Reduxifier.rootStore}>
-      <Application />
+      <Application/>
     </Provider>
   );
 };

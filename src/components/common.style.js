@@ -1,22 +1,19 @@
 import styled from "styled-components";
 
-export const Modal_final = styled.div`
+export const Modal = styled.div`
     position : fixed;
     left:0;
     right:0;
     bottom:0;
     top:0;
-
     transform: translate(-50%, -50%) scale(0);
     transition: 200ms ease-in-out;
     border: 1px solid black;
     border-radius: 10px;
     z-index: 10;
-    background-color: white;
+    background-color: blue;
     width: 500px;
     max-width: 80%;
-
-
 `;
 
 
