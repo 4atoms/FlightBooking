@@ -4,7 +4,7 @@ import Imgsrc from "../../assets/images/AerialView.jpg";
 export const MainDiv = styled.div`
   background-image: url(${Imgsrc});
   background-size: cover;
-  height: auto;
+  height: 100%;
   width: 100%;
   display: block;
   & > Imgsrc {
@@ -73,11 +73,13 @@ export const SearchDiv = styled.div`
   width: 65%;
   padding: 20px 0px 0px 100px;
   margin: 0px 0px 0px 0px;
+  position: relative;
 `;
 
 export const DateInput = styled.div`
   margin: 0px 30px 0px 0px;
   padding: 0px 0px 0px 0px;
+  height: 40px;
   & > input {
     border: 0.5px;
     border-radius: 3px;
@@ -90,6 +92,7 @@ export const DateInput = styled.div`
 export const SourceInput = styled.div`
   margin: 0px 30px 0px 0px;
   padding: 0px 0px 0px 0px;
+  height: 40px;
   & > input {
     border: 0.5px;
     border-radius: 3px;
@@ -101,6 +104,7 @@ export const SourceInput = styled.div`
 export const Destination = styled.div`
   margin: 0px 30px 0px 0px;
   padding: 0px 0px 0px 0px;
+  height: 40px;
   & > input {
     border: 0.5px;
     border-radius: 3px;
@@ -112,6 +116,7 @@ export const Destination = styled.div`
 export const SearchButton = styled.div`
   margin: 0px 30px 0px 0px;
   padding: 0px 0px 0px 0px;
+  height: 40px;
   color: grey;
   & > button {
     border: 0.5px;
@@ -119,5 +124,54 @@ export const SearchButton = styled.div`
     padding: 7px 30px 7px 30px;
     font-size: 17px;
     outline: none;
+  }
+`;
+
+export const AirLineSearchList = styled.div`
+  border: 1px solid;
+  display: ${(props) => (props.isFlight ? "block" : "none")};
+  position: absolute;
+  margin: 100px 0px 0px 390px;
+  padding: 0px 0px 0px 0px;
+  width: 65.69%;
+  color: white;
+  z-index: 1;
+  & > h2 {
+    border: 1px solid;
+  }
+`;
+
+export const FlightList = styled.div`
+  border: 1px solid;
+  display: flex;
+  width: 100%;
+  & > div {
+    flex: 22%;
+    margin: 10px 100px 0px 75px;
+  }
+  & > div > button {
+    border: 1px solid black;
+    padding: 4px 10px 4px 10px;
+    margin-bottom: 4px;
+    color: darkgrey;
+    background-color: transparent;
+  }
+  & > FlightDestination {
+    padding: 0px 0px 0px 60px;
+  }
+`;
+
+export const HeadersDiv = styled.div`
+  display: flex;
+  padding: 0px 0px 0px 0px;
+  width: 100%;
+  & > div {
+    padding: 10px;
+    // border: 1px solid;
+    flex: 30%;
+    margin: 0px 125px 0px 75px;
+  }
+  & > Destiny {
+    margin: 10px 0px 0px 40px;
   }
 `;
