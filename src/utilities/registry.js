@@ -4,6 +4,7 @@ import Login from "Pages/login";
 import Signin from "Pages/signin";
 
 import FlightList from "Pages/flightlist";
+import details from "Pages/fightdetails/details";
 
 function Injector(component, name) {
   const hoc = component;
@@ -18,4 +19,8 @@ export default {
   Signin: Injector(Signin, "Signin"),
 
   FlightList: Injector(FlightList, "FlightList"),
+  Modal_final: Injector(details, "details"),
 };
+
+
+
