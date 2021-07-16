@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { any, shape, bool } from "prop-types";
 import { ErrorBoundary } from "react-error-boundary";
 import { Result, Button } from "antd";
-import { Container } from "CommonStyles";
+
 
 const RefErrorBoundary = (props) => {
   const { children, history } = props;

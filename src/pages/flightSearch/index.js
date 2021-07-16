@@ -159,7 +159,7 @@ const FlightSearch = () => {
                   <div className="FlightDestination">{a.destination}</div>
                   <div className="ViewButton">
                     <Link to="/Details">
-                      <button type="button">View</button>
+                      <button type="button">Flightdetails</button>
                     </Link>
                   </div>
                 </FlightList>
