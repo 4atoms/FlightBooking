@@ -138,21 +138,22 @@ export const AirLineSearchList = styled.div`
   z-index: 1;
   & > h2 {
     border: 1px solid;
+    font-size: 24px;
   }
 `;
 
 export const FlightList = styled.div`
-  border: 1px solid;
+  // border: 1px solid;
   display: flex;
   width: 100%;
   & > div {
     flex: 22%;
-    margin: 10px 100px 0px 75px;
+    margin: 10px 110px 0px 85px;
   }
   & > div > button {
     border: 1px solid black;
     padding: 4px 10px 4px 10px;
-    margin-bottom: 4px;
+    margin-bottom: 9px;
     color: darkgrey;
     background-color: transparent;
   }
@@ -165,6 +166,8 @@ export const HeadersDiv = styled.div`
   display: flex;
   padding: 0px 0px 0px 0px;
   width: 100%;
+  font-size: 18px;
+  font-weight: bold;
   & > div {
     padding: 10px;
     // border: 1px solid;
