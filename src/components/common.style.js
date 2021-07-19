@@ -6,7 +6,7 @@ export const Modalfirst = styled.div`
     padding-top: 0px;
     border: 1px solid black;
     border-radius: 10px;
-    z-index: 10;
+    z-index: 11;
     width: 500px;
     max-width: 80%;
     display: flex;
