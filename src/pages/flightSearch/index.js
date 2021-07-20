@@ -18,12 +18,14 @@ import {
 
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Details from "../fightdetails/details";
 
 const FlightSearch = () => {
   const avlFlights = [];
   const [isFlight, setFlight] = useState(false);
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
+  const [show, setShow] = useState(false)
   // const [fDate, setDate] = useState("");
   const data = [
     { flightName: "Air ATOMS" },
@@ -91,6 +93,10 @@ const FlightSearch = () => {
     console.log(avlFlights);
     showFlight();
   };
+
+
+
+
   return (
     <>
       <MainDiv>
@@ -153,16 +159,19 @@ const FlightSearch = () => {
             </HeadersDiv>
             {airLinesFilter.map((a) => {
               return (
+                <>
                 <FlightList key={a.id}>
                   <div className="FlightDate">{a.flightDate}</div>
                   <div className="FlightSource">{a.source}</div>
                   <div className="FlightDestination">{a.destination}</div>
                   <div className="ViewButton">
-                    <Link to="/Details">
-                      <button type="button">Flightdetails</button>
-                    </Link>
+                  
+                      <button onClick = {() => setShow(true)} type="button">Flightdetails</button>
+                    
                   </div>
                 </FlightList>
+                <Details closeModal = {() => setShow(false)} show = {show} source = {a.source} destination = {a.destination} />
+                </>
               );
             })}
           </AirLineSearchList>
