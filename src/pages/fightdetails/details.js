@@ -1,8 +1,11 @@
 import React from 'react'
-import { Modalfirst, Modalcontent, Modalheader, Modalfooter, Modaltitle, Flightroot, Flightday, Bagdetails, Adultdetails } from '../../components/common.style';
+import { Modalfirst, Modalcontent, Modalheader, Modalfooter, Modaltitle, Flightroot, Bagdetails, Adultdetails } from '../../components/common.style';
 
 const Details =(props) =>{
 
+    if(!props.show){
+        return null
+    }    
     return(
         <Modalfirst>
             <Modalcontent>
@@ -12,16 +15,11 @@ const Details =(props) =>{
                 </Modalheader>
 
                 <Flightroot>
-                    <h3>DEL - CCU</h3> 
+                <h3>{props.source} - {props.destination}</h3> 
                     <h3>₹5,325</h3>
                 </Flightroot>
 
-                <Flightday>
-                    wednesday, Jul 14 • 03:00 - 04:50
-                    6E 2214 • A320
-                    SAVER FARE
-                    Delhi (T3) - Kolkata*Earn 265 RWDS (6E Rewards)
-                </Flightday>
+
 
                 <Bagdetails>
                     <p>
@@ -30,12 +28,11 @@ const Details =(props) =>{
                     </p>
 
                 </Bagdetails>
-                <Adultdetails>Adult - 1*5320</Adultdetails>
+                <Adultdetails>Adult - 1 * 5320</Adultdetails>
                 <Modalfooter>
                     <p>GST comprises of both Central GST and State GST. For details, kindly refer the tax invoice shared on your email id.
                         A Non-refundable convenience fee up to INR 350 per pax per sector for Domestic and up to INR 600 per pax per sector for International has been levied on all online payments made except credit file. Please note that if the payment is to be made in any other currency than Indian Rupee, the Convenience Fee will be calculated as per the conversion rate prevalent at the time of payment.</p>
                 </Modalfooter>
-
             </Modalcontent>
             
         </Modalfirst>

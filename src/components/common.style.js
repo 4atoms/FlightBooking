@@ -2,16 +2,17 @@ import styled from "styled-components";
 
 export const Modalfirst = styled.div`
     position:fixed;
-    padding-left: 10px;
-    padding-top: 0px;
+    top: 15%;
+    left: 35%;
     border: 1px solid black;
     border-radius: 10px;
     z-index: 11;
     width: 500px;
-    max-width: 80%;
+    max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #fff;
 `;
 
 export const Modalcontent = styled.div`
@@ -26,6 +27,7 @@ export const Modalheader = styled.div`
     justify-content: space-between;
     border: 1px solid black;
     border-radius: 2px;
+    width:100%;
     margin:0px;
     padding-top: 20px;
     & > button{
@@ -38,46 +40,41 @@ export const Modalheader = styled.div`
 
 export const Modalfooter = styled.div`
     padding:10px;
+    color:grey;
+    border-top: 1px solid black;
+    border-bottom: 1px solid #black;
 
 `;
 
 export const Modaltitle = styled.div`
     margin:0;
+    border-radius:100%;
 `;
 
 export const Flightroot = styled.div`
     padding:10px
     border-top: 1px solid #eee;
-    boarder-bottom: 1px solid #eee
+    border-bottom: 1px solid #eee
     display: flex;
-
-    width:49%;
-    
 
 `;
 
-export const Flightday = styled.div`
-    padding:10px
-    border-top: 1px solid #eee;
-    boarder-bottom: 1px solid #eee
-    margin-right:0px;
-    display: flex;
-    
-    width:49%;
 
-`;
 
 export const Bagdetails = styled.div`
-    padding:10px
+    padding:20px
     border-top: 1px solid #eee;
-    boarder-bottom: 1px solid #eee
+    border-bottom: 1px solid #eee;
+    color:black;
+
 
 `;
 
 export const Adultdetails = styled.div`
     padding:10px
     border-top: 1px solid #eee;
-    boarder-bottom: 1px solid #eee
+    border-bottom: 1px solid #eee;
+    color:black;
 
 `;
 
