@@ -25,7 +25,7 @@ const FlightSearch = () => {
   const [isFlight, setFlight] = useState(false);
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
   // const [fDate, setDate] = useState("");
   const data = [
     { flightName: "Air ATOMS" },
@@ -45,7 +45,7 @@ const FlightSearch = () => {
 
   const fetchAirLines = () => {
     return axios
-      .get("https://run.mocky.io/v3/40041448-ec54-4475-a276-b918f5660f43")
+      .get("https://run.mocky.io/v3/1d4c5843-3163-4cc6-b4b5-aba1b14556ee")
       .then((res) => {
         setAirLines(res.data);
       })
@@ -93,9 +93,6 @@ const FlightSearch = () => {
     console.log(avlFlights);
     showFlight();
   };
-
-
-
 
   return (
     <>
@@ -160,17 +157,22 @@ const FlightSearch = () => {
             {airLinesFilter.map((a) => {
               return (
                 <>
-                <FlightList key={a.id}>
-                  <div className="FlightDate">{a.flightDate}</div>
-                  <div className="FlightSource">{a.source}</div>
-                  <div className="FlightDestination">{a.destination}</div>
-                  <div className="ViewButton">
-                  
-                      <button onClick = {() => setShow(true)} type="button">Flightdetails</button>
-                    
-                  </div>
-                </FlightList>
-                <Details closeModal = {() => setShow(false)} show = {show} source = {a.source} destination = {a.destination} />
+                  <FlightList key={a.id}>
+                    <div className="FlightDate">{a.flightDate}</div>
+                    <div className="FlightSource">{a.source}</div>
+                    <div className="FlightDestination">{a.destination}</div>
+                    <div className="ViewButton">
+                      <button onClick={() => setShow(true)} type="button">
+                        Flightdetails
+                      </button>
+                    </div>
+                  </FlightList>
+                  <Details
+                    closeModal={() => setShow(false)}
+                    show={show}
+                    source={a.source}
+                    destination={a.destination}
+                  />
                 </>
               );
             })}
