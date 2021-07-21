@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modalfirst, Modalcontent, Modalheader, Modalfooter, Modaltitle, Flightroot, Bagdetails, Adultdetails } from '../../components/common.style';
+import { Modalfirst, Modalcontent, Modalheader, Modalfooter, Modaltitle, Flightroot, Bagdetails, Adultdetails, AirlineName, Date } from '../../components/common.style';
 
 const Details =(props) =>{
 
@@ -16,8 +16,20 @@ const Details =(props) =>{
 
                 <Flightroot>
                 <h3>{props.source} - {props.destination}</h3> 
-                    <h3>₹5,325</h3>
+                    <h3>{props.price}</h3>
                 </Flightroot>
+
+                <AirlineName>
+                    <h3>
+                        {props.airLineName}
+                    </h3>
+                </AirlineName>
+
+                <Date>
+                    <h3>
+                        {props.dateTime}
+                    </h3>
+                </Date> 
 
 
 

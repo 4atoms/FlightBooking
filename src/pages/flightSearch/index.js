@@ -45,7 +45,7 @@ const FlightSearch = () => {
 
   const fetchAirLines = () => {
     return axios
-      .get("https://run.mocky.io/v3/1d4c5843-3163-4cc6-b4b5-aba1b14556ee")
+      .get("https://run.mocky.io/v3/097b04aa-8ef5-4b4f-841d-5a073bfade84")
       .then((res) => {
         setAirLines(res.data);
       })
@@ -93,6 +93,7 @@ const FlightSearch = () => {
     console.log(avlFlights);
     showFlight();
   };
+
 
   return (
     <>
@@ -172,6 +173,9 @@ const FlightSearch = () => {
                     show={show}
                     source={a.source}
                     destination={a.destination}
+                    dateTime = {a. dateTime}
+                    airLineName= {a.airLineName}
+                    price={a.price}
                   />
                 </>
               );
