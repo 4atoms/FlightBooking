@@ -28,7 +28,7 @@ const Details =(props) =>{
                     </p>
 
                 </Bagdetails>
-                <Adultdetails>Adult - 1 * 5320</Adultdetails>
+                <Adultdetails>Adult - 1 * {props.price}</Adultdetails>
                 <Modalfooter>
                     <p>GST comprises of both Central GST and State GST. For details, kindly refer the tax invoice shared on your email id.
                         A Non-refundable convenience fee up to INR 350 per pax per sector for Domestic and up to INR 600 per pax per sector for International has been levied on all online payments made except credit file. Please note that if the payment is to be made in any other currency than Indian Rupee, the Convenience Fee will be calculated as per the conversion rate prevalent at the time of payment.</p>
