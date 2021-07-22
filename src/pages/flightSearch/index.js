@@ -39,13 +39,14 @@ const FlightSearch = () => {
 
   const [airLines, setAirLines] = useState([]);
   const [airLinesFilter, setAirLinesFilter] = useState([]);
+  const [airLinesDetails, setAirLinesDetails] = useState({});
   useEffect(() => {
     fetchAirLines();
   }, [airLinesFilter]);
 
   const fetchAirLines = () => {
     return axios
-      .get("https://run.mocky.io/v3/097b04aa-8ef5-4b4f-841d-5a073bfade84")
+      .get("https://run.mocky.io/v3/510515d9-8167-46bd-99af-033e9984890b ")
       .then((res) => {
         setAirLines(res.data);
       })
@@ -163,7 +164,11 @@ const FlightSearch = () => {
                     <div className="FlightSource">{a.source}</div>
                     <div className="FlightDestination">{a.destination}</div>
                     <div className="ViewButton">
-                      <button onClick={() => setShow(true)} type="button">
+                    <button onClick={() => {
+                         setAirLinesDetails(a)
+                         setShow(true)
+                        }
+                      } type="button">
                         Flightdetails
                       </button>
                     </div>
@@ -171,11 +176,8 @@ const FlightSearch = () => {
                   <Details
                     closeModal={() => setShow(false)}
                     show={show}
-                    source={a.source}
-                    destination={a.destination}
-                    dateTime = {a. dateTime}
-                    airLineName= {a.airLineName}
-                    price={a.price}
+                    flightInfo = {airLinesDetails}
+               
                   />
                 </>
               );
