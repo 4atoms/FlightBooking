@@ -18,13 +18,18 @@ import {
 
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { DatePicker } from "antd";
+import moment from "moment";
+import "antd/dist/antd.css";
+// import DatePicker from "react-datepicker";
+// import "react-datepicker/dist/react-datepicker.css";
 
 const FlightSearch = () => {
   const avlFlights = [];
   const [isFlight, setFlight] = useState(false);
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
-  // const [fDate, setDate] = useState("");
+  const [selectedDate, setSelectedDate] = useState(null);
   const data = [
     { flightName: "Air ATOMS" },
     { flightName: "Air India" },
@@ -43,7 +48,7 @@ const FlightSearch = () => {
 
   const fetchAirLines = () => {
     return axios
-      .get("https://run.mocky.io/v3/40041448-ec54-4475-a276-b918f5660f43")
+      .get("https://run.mocky.io/v3/510515d9-8167-46bd-99af-033e9984890b")
       .then((res) => {
         setAirLines(res.data);
       })
@@ -54,36 +59,20 @@ const FlightSearch = () => {
   const showFlight = () => {
     setFlight(true);
   };
+  const dateFormat = "MM/DD/YYYY";
   const searchFlight = () => {
     airLines.forEach((x) => {
-      console.log(x.flightDate);
-      // const newDate = new Date(x.flightDate);
-      // const day = newDate.getDate();
-      // const month = newDate.getMonth();
-      // const year = newDate.getFullYear();
-      // let date = day + "/" + month + "/" + year;
-      // console.log("Formatted Date: ", date);
-      // const date1 = newDate.getMilliseconds();
-      // console.log("Date1: ", date1);
-
-      // const nDate = new Date(fDate);
-      // console.log("nDate: ", nDate);
-      // const date2 = nDate.getMilliseconds();
-      // console.log("Date2: ", date2);
-
-      // console.log("Difference: ", nDate - date2);
-      // const newDate = new Date(fDate);
-      // console.log("1: ", newDate.toDateString());
-      // const newType =
-      // const myDate = new Date("2013/1/16");
-      // console.log(myDate);
-      // const jsonDate = newDate.getMilliseconds();
-      // let newDateString = newDate.toLocaleDateString();
-      // console.log("New Date: ", jsonDate);
-
-      // let newDate2 = new Date(fDate);
-      console.log();
-      if (x.source === from && x.destination === to) {
+      console.log("Json Date: ", x.flightDate);
+      console.log("Selected Date: ", selectedDate);
+      const convertedSelectedDate = Date.parse(selectedDate);
+      console.log(convertedSelectedDate);
+      const jsonDate = Date.parse(x.flightDate);
+      console.log(jsonDate);
+      if (
+        jsonDate === convertedSelectedDate &&
+        x.source === from &&
+        x.destination === to
+      ) {
         avlFlights.push(x);
       }
     });
@@ -110,11 +99,12 @@ const FlightSearch = () => {
           </ListOfFlights>
           <SearchDiv>
             <DateInput>
-              <input
-                type="date"
-                name="date"
-                placeholder="Date"
-                // onChange={(e) => setDate(e.target.value)}
+              <DatePicker
+                defaultValue={moment("08/01/2021", dateFormat)}
+                format={dateFormat}
+                selected={selectedDate}
+                onChange={(date) => setSelectedDate(date)}
+                minDate={new Date()}
               />
             </DateInput>
             <SourceInput>
@@ -134,12 +124,7 @@ const FlightSearch = () => {
               />
             </Destination>
             <SearchButton>
-              <button
-                type="submit"
-                name="destination"
-                placeholder="Destination"
-                onClick={searchFlight}
-              >
+              <button type="submit" name="destination" onClick={searchFlight}>
                 Search
               </button>
             </SearchButton>
@@ -149,7 +134,7 @@ const FlightSearch = () => {
               <div>Date</div>
               <div>Source</div>
               <div className="destiny">Destination</div>
-              <div></div>
+              <div>View</div>
             </HeadersDiv>
             {airLinesFilter.map((a) => {
               return (
