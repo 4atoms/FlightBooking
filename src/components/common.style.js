@@ -59,6 +59,24 @@ export const Flightroot = styled.div`
 
 `;
 
+export const AirlineName = styled.div`
+    padding:10px
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee
+    display: flex;
+    color: blue;
+
+`;
+
+export const Date = styled.div`
+    padding:10px
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee
+    display: flex;
+    align-content: left;
+
+`;
+
 
 
 export const Bagdetails = styled.div`

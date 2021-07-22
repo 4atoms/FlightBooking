@@ -1,7 +1,9 @@
 import React from 'react'
-import { Modalfirst, Modalcontent, Modalheader, Modalfooter, Modaltitle, Flightroot, Bagdetails, Adultdetails } from '../../components/common.style';
+import { Modalfirst, Modalcontent, Modalheader, Modalfooter, Modaltitle, Flightroot, Bagdetails, Adultdetails, AirlineName, Date } from '../../components/common.style';
 
 const Details =(props) =>{
+
+    console.log(`modal ${JSON.stringify(props.flightInfo)}`)
 
     if(!props.show){
         return null
@@ -15,9 +17,21 @@ const Details =(props) =>{
                 </Modalheader>
 
                 <Flightroot>
-                <h3>{props.source} - {props.destination}</h3> 
-                    <h3>₹5,325</h3>
+                <h3>{props.flightInfo.source} - {props.flightInfo.destination}</h3> 
+                    <h3>{props.flightInfo.price}</h3>
                 </Flightroot>
+
+                <AirlineName>
+                    <h3>
+                       {props.flightInfo.airLineName} 
+                    </h3>
+                </AirlineName>
+
+                <Date>
+                    <h3>
+                    {props.flightInfo.dateTime} 
+                    </h3>
+                </Date>
 
 
 
@@ -28,7 +42,7 @@ const Details =(props) =>{
                     </p>
 
                 </Bagdetails>
-                <Adultdetails>Adult - 1 * 5320</Adultdetails>
+                <Adultdetails>Adult - 1 * {props.flightInfo.price} </Adultdetails>
                 <Modalfooter>
                     <p>GST comprises of both Central GST and State GST. For details, kindly refer the tax invoice shared on your email id.
                         A Non-refundable convenience fee up to INR 350 per pax per sector for Domestic and up to INR 600 per pax per sector for International has been levied on all online payments made except credit file. Please note that if the payment is to be made in any other currency than Indian Rupee, the Convenience Fee will be calculated as per the conversion rate prevalent at the time of payment.</p>
