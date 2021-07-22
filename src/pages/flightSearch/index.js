@@ -52,7 +52,7 @@ const FlightSearch = () => {
 
   const fetchAirLines = () => {
     return axios
-      .get("https://run.mocky.io/v3/510515d9-8167-46bd-99af-033e9984890b ")
+      .get("https://run.mocky.io/v3/510515d9-8167-46bd-99af-033e9984890b")
       .then((res) => {
         setAirLines(res.data);
       })
