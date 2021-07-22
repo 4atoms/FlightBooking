@@ -29,7 +29,7 @@ const FlightSearch = () => {
   const [isFlight, setFlight] = useState(false);
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
-  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedDate, setSelectedDate] = useState("");
   const data = [
     { flightName: "Air ATOMS" },
     { flightName: "Air India" },
